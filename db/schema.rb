@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_024212) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
+    t.string "status", default: "public"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_024212) do
     t.integer "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
+    t.string "status", default: "public"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
