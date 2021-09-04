@@ -1,35 +1,23 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
+<h1>
+  <%= @article.title %>
+</h1>
+<p>
+  <%= @article.body %>
+</p>
 
 <div class="comments">
   <h2>Comments</h2>
-  <% @article.comments.each do |comment| %>
-    <div class="comment">
-      <p><strong><%= comment.commenter %></strong></p>
-      <p><%= comment.body %></p>
-    </div>
-  <% end %>
- </div>
-
+  <%= render @article.comments %>
+</div>
 
 <h2>Add a comment:</h2>
-<%= form_with model: [@article, @article.comments.build] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'comments/form' %>
 
- <ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %>
-  <li><%= link_to "Delete", article_path(@article),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
+<ul>
+  <li>
+    <%= link_to "Edit", edit_article_path(@article) %>
+  </li>
+  <li>
+    <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+  </li>
 </ul>
