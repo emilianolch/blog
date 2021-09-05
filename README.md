@@ -8,4 +8,6 @@ New things I have found when jumping from Rails 3 to Rails 6
 
 * Concerns
 
+* link_to syntax: the route parameter can be a model object, or an array of model objects when linkng to nested resources.
+
 * ...
