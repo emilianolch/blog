@@ -1,21 +1,28 @@
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <div class="form-floating">
+      <%= form.text_field :title, class: "form-control", placeholder: "Title" %>
+      <%= form.label :title, class: "form-label" %>
+    </div>
     <% article.errors.full_messages_for(:title). each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+  <div class="mb-3">
+    <div class="form-floating">
+      <%= form.text_area :body, 
+        class: "form-control", 
+        style: "height: 150px",
+        placeholder: "Some interesting text" %>
+      <%= form.label :body, class: "form-label" %>
+    </div>
     <% article.errors.full_messages_for(:body).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
