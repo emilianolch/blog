@@ -25,6 +25,7 @@ class Bot
     @clnt.post(@url + "/sendMessage", {
       chat_id: CHAT_ID,
       text: text,
+      parse_mode: "MarkdownV2"
     })
   end
 end
