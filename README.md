@@ -1,5 +1,5 @@
 # TELEBLOG
-## Simple blog applications that sends published articles to a Telegram group.
+## Simple blog application that sends published articles to a Telegram group.
 
 This project is just for playing with Telegram Bot API and Rails 6.
 
